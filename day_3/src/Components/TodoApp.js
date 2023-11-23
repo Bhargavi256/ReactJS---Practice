@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Task } from "./Task";
 
 function TodoApp(){
     const[todoList,settodoList]=useState([]);
@@ -10,7 +10,8 @@ function TodoApp(){
     const addTask=()=>{
         const  task = {
             id: todoList.length===0?1:todoList[todoList.length-1].id+1,
-            taskName:newTask
+            taskName:newTask,
+            complete:false
         };
         const  newTodoList = [...todoList,task];
         settodoList(newTodoList);
@@ -24,6 +25,15 @@ function TodoApp(){
      });
      settodoList(newTodoList);
     };
+    const completeTask =(id)=>{
+        settodoList(todoList.map((task)=>{
+             if(task.id===id){
+                return{...task,complete:true}
+             }
+             else
+                return task;
+        }));
+    };
     return(
         <div className="App">
             <div className="addTask">
@@ -32,12 +42,12 @@ function TodoApp(){
             </div>
             <div className="list">
                 {todoList.map((task)=>{
-                    return(
-                    <div>
-                    <h1>{task.taskName}</h1>
-                    <button onClick={()=>deleteTask(task.id)}>X</button>
-                    </div>
-                    );
+                    return (<Task taskName={task.taskName} id={task.id}
+                        complete={task.complete}
+                    deleteTask = {deleteTask} 
+                    completeTask = {completeTask}/>);
+                        
+                    
                 })}
             </div>
         </div>
