@@ -23,3 +23,10 @@ Learnt
 3. every task is stored as a object (new topic learnt )
 4. feature2 : can delete the task
 5. Used states to update the information
+
+# Day 4
+1. Learnt about useEffect hook
+2. example1 : did task example to understand more about useEffect hook
+3. Learnt how to fetch data using fetch and Axios
+4. gathered info using cat fact api using axios and useEffect
+5. Gethered age and details using given name with the help of age predictor api
