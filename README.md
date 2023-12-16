@@ -30,3 +30,10 @@ Learnt
 3. Learnt how to fetch data using fetch and Axios
 4. gathered info using cat fact api using axios and useEffect
 5. Gethered age and details using given name with the help of age predictor api
+
+# Day 5
+1. Learnt basics of ReactJs
+2. Components and its types with example
+3. Difference between components
+4. What is Props
+5. Difference between props and state
